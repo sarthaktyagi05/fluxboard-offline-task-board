@@ -1,18 +1,14 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react';
 
-export function useGlobalTimer() {
-
-  const [time, setTime] = useState(Date.now())
+export const useGlobalTimer = (updatedAt: number) => {
+  const [elapsed, setElapsed] = useState(0);
 
   useEffect(() => {
+    const interval = setInterval(() => {
+      setElapsed(Math.floor((Date.now() - updatedAt) / 1000));
+    }, 10000); 
 
-    const id = setInterval(() => {
-      setTime(Date.now())
-    }, 10000)
-
-    return () => clearInterval(id)
-
-  }, [])
-
-  return time
-}
+    return () => clearInterval(interval);
+  }, [updatedAt]); 
+  return elapsed;
+};
