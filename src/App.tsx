@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import  { useCallback } from 'react';
 import { BoardProvider, useBoard } from './store/BoardContext';
 import { Column } from './components/Column';
 import { Header } from './components/Header'; 

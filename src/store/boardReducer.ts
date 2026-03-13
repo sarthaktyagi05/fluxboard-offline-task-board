@@ -1,4 +1,4 @@
-import type { BoardState, Action, Status } from './types';
+import type { BoardState, Action } from './types';
 
 export const initialState: BoardState = {
   tasks: {

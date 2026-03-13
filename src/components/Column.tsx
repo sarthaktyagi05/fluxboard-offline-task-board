@@ -11,7 +11,7 @@ interface Props {
   onMove: (taskId: string, to: Status, index: number) => void;
 }
 
-export const Column = ({ status, taskIds, tasks, onMove }: Props) => {
+export const Column = ({ status, tasks, onMove }: Props) => {
   const { state } = useBoard();
   const [scrollTop, setScrollTop] = useState(0);
   const [isOver, setIsOver] = useState(false);
